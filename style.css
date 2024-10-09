@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#mainblock {
+	display: flex;
+	min-height: 100vh;
+	background: url("img/imag.jpg") center center / cover;
+	background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    width: min(18vmin, 35vmax);
+    min-width: 7.5rem;
+    max-width: 12.5rem;
+}
+header {
+	position: absolute;
+	display: flex;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: min(128vmin, 125vmax);
+	top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+#menu {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: min(4vmin, 7vmax);
+}
+#menu .reh {
+	display: flex;
+    align-items: center;
+	font-family: "Inter";
+	font-weight: 400;
+	font-size: min(2vmin, 3vmax);
+    color: #FFFFFF;
+    position: relative;
+	float: left;
+	list-style: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.reh::after {
+    content: '';
+    position: absolute;
+    left: 37%; /* Откуда начинает */
+    bottom: -8px; /* Отступ от текста */
+    width: 0;  /* Длина черточки */
+    height: 3px;  /* Толщина черточки */
+    background: #f6d944; /* Цвет черточки */
+    border-radius: 12px;
+}
+.reh.active::after {
+    content: '';
+    position: absolute;
+    left: 37%; /* Откуда начинает */
+    bottom: -8px; /* Отступ от текста */
+    width: 25%;  /* Длина черточки */
+    height: 3px;  /* Толщина черточки */
+    background: #f6d944; /* Цвет черточки */
+    border-radius: 12px;
+}
+.reh:hover::after {
+	webkit-transform: translateX(-50%);
+	width: 100%;
+	transform: translateX(-37%);
+    transition: all .3s;
+}
+
+.burger {
+	display: none;
+}
+
+.language {
+	width: min(14vmin, 25vmax);
+	min-width: 6.5rem;
+    max-width: 8.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.lang {
+	background-color: rgba(108, 108, 108, .49);
+	min-width: 4.0rem;
+    max-width: 8.5rem;
+	height: 33px;
+	border-radius: 13px; 
+	display: flex;
+	align-items: center;
+	justify-content: center;   
+}
+.group {
+	
+}
+
+#head {
+	margin: 0px auto;
+	box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bonnet Grotesque Nr';
+    src: local('Bonnet Grotesque Nr Medium'), local('Bonnet-Grotesque-Nr-Medium'),
+        url('BonnetGrotesqueNr-Medium.woff2') format('woff2'),
+        url('BonnetGrotesqueNr-Medium.woff') format('woff'),
+        url('BonnetGrotesqueNr-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+.joks {
+	color: #f6d944;
+    font-family: 'Bonnet Grotesque Nr', sans-serif;
+    font-size: min(8vmin, 15vmax);
+    font-weight: 500;
+    text-align: center;
+    
+    letter-spacing: 0;
+}
+.trans {
+	color: #fff;
+    font-family: 'Bonnet Grotesque Nr', sans-serif;
+    font-size: min(15.75vmin, 50vmax);
+    font-weight: 400;
+    text-align: center;
+    line-height: 1;
+}
+.foot {
+	font-family: 'Bonnet Grotesque Nr', sans-serif;
+	font-size: min(14.8vmin, 25vmax);
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    margin-bottom: min(4vmin, 7vmax);
+}
+#but {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.but {
+	font-family: "Inter";
+	font-weight: 700;
+	background-color: #F6D944;
+	cursor: pointer;
+	border: none;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #102025;
+    font-size: min(2.2vmin, 3vmax);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    padding: min(2.3vmin, 3vmax) min(7vmin, 9vmax);
+    min-width: 5.5rem;
+    min-height: 1.875rem;
+    background-color: #f6d944;
+    border-radius: 3.5rem;
+    transition: all .3s;
+}
+.but:hover {
+	background-color: #FFBF40;
+}
+@media (max-width: 800px) {
+    .trans{
+        font-size: min(14.75vmin, 25vmax);
+    }
+}
+@media (max-width: 800px) {
+    .foot {
+        font-size: min(13.8vmin, 25vmax);
+    }
+}
+@media (max-width: 767px) {
+    #menu {
+    	display: none;
+    }  
+    .burger {
+    	opacity: 100%;
+    	visibility: visible;
+    	position: relative;
+    	display: block;
+    	height: 1.125rem;
+    	width: 1.875rem;
+        margin: 20px auto;
+        cursor: pointer;
+    }
+    .burger span, .burger::after, .burger::before {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+    }
+    .burger::before {
+    	content: "";
+    	top: 0;
+    }
+    .burger::after {
+    	content: "";
+    	bottom: 0;
+    }
+    .burger span {
+    	top: 8px;
+    }
+}
